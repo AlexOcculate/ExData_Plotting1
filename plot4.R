@@ -12,6 +12,7 @@ get.and.clean.household.power.consumption <- function() {
 }
 #
 write.png4.file <- function( hpc ) {
+   png(filename="plot4.png", height=480, width=480, bg="white" ) # Saving to file
    par( mfrow=c( 2, 2 ) )
    # top-left
    with( hpc, plot( TimeStamp , Global_active_power , type = "l"
@@ -30,8 +31,6 @@ write.png4.file <- function( hpc ) {
    # bottom-right
    with( hpc,  plot( TimeStamp, Global_reactive_power, type = "l"
                    , xlab="datetime" ) )
-   # Saving to file
-   dev.copy(png, file="plot4.png", height=480, width=480)
    dev.off()
 }
 #

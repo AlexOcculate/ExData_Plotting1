@@ -12,9 +12,8 @@ get.and.clean.household.power.consumption <- function() {
 }
 #
 write.png1.file <- function( hpc ) {
+   png(filename="plot1.png", height=480, width=480, bg="white" ) # Saving to file
    hist( hpc$Global_active_power , main = "Global Active Power", xlab="Global Active Power (kilowatts)", col="red" )
-   # Saving to file
-   dev.copy(png, file="plot1.png", height=480, width=480)
    dev.off()
 }
 #
